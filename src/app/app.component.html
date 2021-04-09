@@ -24,8 +24,7 @@
     <span>Fill : </span>
     <input type="checkbox" [(ngModel)]="myForm.fill" name="fill">
   </label>
-
-  <input type="submit" [disabled]="myForm.shape === null || myForm.color === null">
+  <input type="submit" [disabled]="myForm.shape === null">
 </form>
 
 

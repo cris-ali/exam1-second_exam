@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {}
 
   submit(data) {
-    // console.log(data.value);
     this.shapes.push(data.value);
   }
 }
