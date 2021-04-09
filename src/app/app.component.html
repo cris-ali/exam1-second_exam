@@ -1,0 +1,42 @@
+<h1>Shape Form</h1>
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <label for="">
+    <span>Shape : </span>
+    <select name="" id="" [(ngModel)]="myForm.shape" name="shape">
+      <option [value]="null">Select Shape</option>
+      <option>circle</option>
+      <option>square</option>
+      <option>rectangle</option>
+    </select>
+  </label>
+
+  <label for="">
+    <span>Color : </span>
+    <select name="" id="" [(ngModel)]="myForm.color" name="color">
+      <option [value]="null">Select Color</option>
+      <option>red</option>
+      <option>blue</option>
+      <option>green</option>
+    </select>
+  </label>
+
+  <label for="">
+    <span>Fill : </span>
+    <input type="checkbox" [(ngModel)]="myForm.fill" name="fill">
+  </label>
+
+  <input type="submit" [disabled]="myForm.shape === null || myForm.color === null">
+</form>
+
+
+<div id="shape-collection">
+  <h2>Shape Collection</h2>
+  <div>
+    <ng-container *ngFor="let item of shapes">
+      <div class="shape {{item.shape}}" style="background-color: {{item.fill ? item.color : ''}};
+    border: 2px solid {{item.color}}"></div>
+    </ng-container>
+  </div>
+
+
+</div>
